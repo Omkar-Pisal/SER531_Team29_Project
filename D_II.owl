@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/diseaseAnalyser/"
+     xml:base="http://www.semanticweb.org/diseaseAnalyser/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/diseaseAnalyser">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/diseaseAnalyser"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#exposedToSMokng -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#exposedToSMokng">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Smoking"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasAnotherFactors -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasAnotherFactors">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasBloodMineralLevels -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasBloodMineralLevels">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasBloodPressureLEvel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasBloodPressureLEvel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodPressure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasCoughing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasCoughing">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Coughing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasDisease">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasPollutionExposure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasPollutionExposure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#ExposureToPollution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasSymptoms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasSymptoms">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#needsHospitalisation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#needsHospitalisation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Hospitalisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#consumesAlcohol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#consumesAlcohol">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#coughsBlood -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#coughsBlood">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Coughing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#doesActiveSmoking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#doesActiveSmoking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Smoking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#exposedToAirPollution -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#exposedToAirPollution">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#ExposureToPollution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#exposedToPassiveSmoking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#exposedToPassiveSmoking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Smoking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasAPHighLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasAPHighLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodPressure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasAPLowLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasAPLowLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodPressure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasAge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasBloodUreaLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasBloodUreaLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasCardioDisease -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasCardioDisease">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasGlucoseLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasGlucoseLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasHemoglobinLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasHemoglobinLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasHypertension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasHypertension">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasIntubationLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasIntubationLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Hospitalisation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasPneumonia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasPneumonia">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasPotassiumLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasPotassiumLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasRenalChronic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasRenalChronic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasSodiumLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasSodiumLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#hasSummary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#hasSummary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Disease"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#isPregnant -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#isPregnant">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#needsICU -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/diseaseAnalyser#needsICU">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Hospitalisation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#AnotherFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#AnotherFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#BloodMinerals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#BloodMinerals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#BloodPressure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#BloodPressure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Coughing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Coughing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Disease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#ExposureToPollution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#ExposureToPollution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Factors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Hospitalisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Hospitalisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/diseaseAnalyser#Smoking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/diseaseAnalyser#Smoking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/diseaseAnalyser#Factors"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
