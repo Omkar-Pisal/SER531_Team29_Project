@@ -9,8 +9,13 @@
 <body>
     <div class="container">
         <h1>Symptoms Input</h1>
-        <label for="symptoms">Enter Symptoms:</label>
-        <textarea id="symptoms" rows="4" cols="50"></textarea>
+        <div id="symptoms-container">
+            <div class="symptom-input">
+                <label for="symptom">Enter Symptom:</label>
+                <input type="text" name="symptom" class="symptom">
+                <button onclick="addSymptom()">+</button>
+            </div>
+        </div>
         <button onclick="submitSymptoms()">Submit</button>
     </div>
 
