@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Result</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <div id='result-container' class="result-container">
+            <!-- Separate div for graph images -->
+        </div>
+        <div class="graph-container">
+            <img src="../Graphs/alzheimer_plot.png" alt="Graph 1" class="graph">
+            <img src="../Graphs/cardiovascular_plot.png" alt="Graph 2" class="graph">
+        </div>
+        <button id="returnButton">Return</button>
+    </div>
+
+    <script src="resultHandler.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Add a new entry to the browser history
+    window.history.pushState(null, null, window.location.href);
+
+    // Disable the back button
+    window.onpopstate = function (event) {
+        window.history.pushState(null, null, window.location.href);
+    };
+
+    // Return button click event
+    const returnButton = document.getElementById('returnButton');
+    returnButton.addEventListener('click', () => {
+        // Navigate back to the previous page (index.html)
+        window.location.href = 'index.html';
+    });
+});
+
+    </script>
+</body>
+</html>
