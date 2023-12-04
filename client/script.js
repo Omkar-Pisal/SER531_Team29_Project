@@ -38,36 +38,48 @@ function addSymptom() {
 function submitSymptoms() {
     const ageInput = document.querySelector('.age');
     const age = ageInput ? ageInput.value : null;
-
+    let ageForCalculation
+    if(parseInt(age) < 26){
+        ageForCalculation = 1
+    }    
+    else if(parseInt(age) >= 26 && parseInt(age)<=45){
+        ageForCalculation = 2
+    }
+    else if(parseInt(age) >= 46 && parseInt(age)<=65){
+        ageForCalculation = 3
+    }
+    else if(parseInt(age) >= 65){
+        ageForCalculation = 4
+    }
     // Validate age
     if (age < 1 || age > 110) {
         alert('Please enter a valid age between 1 and 110.');
         return;
     }
-
+    alert(typeof(ageForCalculation))
     const sexSelect = document.querySelector('.sex');
     const sex = sexSelect ? sexSelect.value : null;
 
     const symptomSelects = document.querySelectorAll('.symptom');
     const symptoms = Array.from(symptomSelects).map(select => select.value);
 
-    const bloodGlucoseInput = document.querySelector('[name="bloodGlucose"]');
-    const bloodGlucose = bloodGlucoseInput ? bloodGlucoseInput.value : null;
 
     const bloodSodiumInput = document.querySelector('[name="bloodSodium"]');
-    const bloodSodium = bloodSodiumInput ? bloodSodiumInput.value : null;
+    const bloodSodium = bloodSodiumInput ? integerToFloat(bloodSodiumInput.value, true) : null;
 
     const bloodPotassiumInput = document.querySelector('[name="bloodPotassium"]');
-    const bloodPotassium = bloodPotassiumInput ? bloodPotassiumInput.value : null;
+    const bloodPotassium = bloodPotassiumInput ? integerToFloat(bloodPotassiumInput.value,true) : null;
 
     const bloodUreaInput = document.querySelector('[name="bloodUrea"]');
-    const bloodUrea = bloodUreaInput ? bloodUreaInput.value : null;
+    const bloodUrea = bloodUreaInput ? integerToFloat(bloodUreaInput.value, true) : null;
 
     const systolicPressureInput = document.querySelector('[name="systolicPressure"]');
     const systolicPressure = systolicPressureInput ? systolicPressureInput.value : null;
 
     const diastolicPressureInput = document.querySelector('[name="diastolicPressure"]');
     const diastolicPressure = diastolicPressureInput ? diastolicPressureInput.value : null;
+
+
 
     // Check for mandatory fields
     if (!sex || !symptoms) {
@@ -80,24 +92,24 @@ function submitSymptoms() {
         alert('Please select each option only once.');
         return;
     }
-
+    
     // Sending data to the backend
     fetch('http://localhost:3000/submitSymptoms', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ age, sex, symptoms, bloodGlucose, bloodSodium, bloodPotassium, bloodUrea, systolicPressure, diastolicPressure }),
+        body: JSON.stringify({ ageForCalculation, sex, symptoms, bloodSodium, bloodPotassium, bloodUrea, systolicPressure, diastolicPressure }),
     })
     .then(response => response.json())
     .then(data => {
         // Handle the response from the server
-        console.log(data);
-
+        console.log(data)
         // Check if the data has a message
         if (data.message) {
             // Save the data to localStorage for access in the new page
             localStorage.setItem('resultData', JSON.stringify(data));
+            localStorage.setItem('data', JSON.stringify(data.data))
             
             // Redirect to the new HTML file
             window.location.href = 'result.html';
@@ -110,4 +122,17 @@ function submitSymptoms() {
 
 function hasDuplicates(array) {
     return (new Set(array)).size !== array.length;
+}
+
+
+function integerToFloat(value, isBloodPotassium = false) {
+    if (value) {
+        const intValue = parseInt(value);
+        if (isBloodPotassium) {
+            const floatValue = intValue.toFixed(1);
+            return floatValue;
+        } else {
+            return intValue;
+        }
+    }
 }

@@ -51,17 +51,69 @@ button:hover {
 .margin-bottom {
     margin-bottom: 10px;
 }
-.result-container {
-    margin-top: 20px;
+
+.disease-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
-.graph-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+.disease-info a {
+    color: #0275d8;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.graph {
-    max-width: 48%; /* Adjust as needed based on your layout */
-    height: auto;
+.disease-info a:hover {
+    text-decoration: underline;
+}
+
+.disease-info p {
+    margin-top: 5px;
+}
+#barChart {
+    max-width: 600px; /* Adjust as needed */
+    max-height: 400px; /* Adjust as needed */
+    margin: auto; /* Center the chart if the container is wider */
+}
+.result-container img {
+    max-width: 100%; /* Ensures image is not wider than its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    margin-bottom: 10px; /* Space below each image */
+    border-radius: 4px; /* Optional: for rounded corners */
+}
+
+/* Adjust canvas and image container */
+#barChart, .result-container img {
+    max-width: 600px; /* Set a max-width for both images and canvas */
+    margin: auto; /* Center align within the container */
+}
+
+@media (max-width: 768px) {
+    #barChart, .result-container img {
+        max-width: 100%;
+    }
+}
+.result-container img {
+    max-width: 100%; /* Ensures image is not wider than its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    margin-bottom: 10px; /* Space below each image */
+    border-radius: 4px; /* Optional: for rounded corners */
+    display: block; /* Ensures images are block level for proper spacing */
+    margin-left: auto; /* Centers the image */
+    margin-right: auto; /* Centers the image */
+}
+
+/* You can also control the size of the images more precisely if needed */
+.result-container #image1, .result-container #image2 {
+    max-width: 600px; /* Adjust as needed */
+}
+
+/* For smaller screens, you might want more specific control */
+@media (max-width: 768px) {
+    .result-container img {
+        max-width: 100%;
+        height: auto;
+    }
 }

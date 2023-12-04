@@ -5,39 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Result</title>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Result</h1>
         <div id='result-container' class="result-container">
-            <!-- Separate div for graph images -->
-        </div>
-        <div class="graph-container">
-            <img src="../Graphs/alzheimer_plot.png" alt="Graph 1" class="graph">
-            <img src="../Graphs/cardiovascular_plot.png" alt="Graph 2" class="graph">
+            <!-- Separate div for the chart --><!-- Add these inside your result-container div -->
+<img id="image1" src="cancer.jpeg" alt="Description of image 1" style="display: block;">
+<img id="image2" src="covid.jpeg" alt="Description of image 2" style="display: block;">
+<img id="image3" src="kidney.jpeg" alt="Description of image 2" style="display: block;">
+<img id="image4" src="cardio.jpeg" alt="Description of image 2" style="display: block;">
+
+<!-- Add more images as needed -->
+
+            <canvas id="barChart" width="400" height="300"></canvas>
         </div>
         <button id="returnButton">Return</button>
     </div>
 
+    <!-- Include your JavaScript files -->
     <script src="resultHandler.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    // Add a new entry to the browser history
-    window.history.pushState(null, null, window.location.href);
-
-    // Disable the back button
-    window.onpopstate = function (event) {
-        window.history.pushState(null, null, window.location.href);
-    };
-
-    // Return button click event
-    const returnButton = document.getElementById('returnButton');
-    returnButton.addEventListener('click', () => {
-        // Navigate back to the previous page (index.html)
-        window.location.href = 'index.html';
-    });
-});
-
-    </script>
 </body>
 </html>
