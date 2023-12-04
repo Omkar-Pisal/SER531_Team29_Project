@@ -4,21 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Symptoms Input</title>
+    <title>Patient Details</title>
 </head>
 <body>
     <div class="container">
-        <h1>Symptoms Input</h1>
-        <div id="symptoms-container">
+        <h1>Patient Details</h1>
+        <form id="patientForm">
             <div class="symptom-input">
-                <label for="symptom">Enter Symptom:</label>
-                <input type="text" name="symptom" class="symptom">
-                <button onclick="addSymptom()">+</button>
+                <label for="age">Age:*</label>
+                <input value='20' type="number" max="110" name="age" class="age" required>
             </div>
-        </div>
-        <button onclick="submitSymptoms()">Submit</button>
+            <div class="symptom-input padding-top">
+                <label for="sex">Sex:*</label>
+                <select name="sex" class="sex margin-bottom" required>
+                    <option value="2">Male</option>
+                    <option value="1">Female</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </div>
+            <label for="symptom">Select Symptom:*</label>
+            <div id="symptoms-container">
+                <div class="symptom-input">
+                    <select name="symptom" class="symptom margin-bottom" required>
+                        <option value="Air Pollution">Exposure to Air Pollution</option>
+                        <option value="Passive Smoking">Passive Smoking</option>
+                        <option value="Active Smoking">Active Smoking</option>
+                        <option value="Alcohol Consumption">Alcohol Consumption</option>
+                        <option value="Blood Coughing">Blood Coughing</option>
+                        <option value="Cardio Disease">Cardio Disease</option>
+                        <option value="Hypertension">Hypertension</option>
+                        <option value="Pneumonia">Pneumonia</option>
+                        <option value="Renal Chronic">Renal Chronic</option>
+                        <option value="Pregnancy">Pregnancy</option>
+                    </select>
+                    <button type="button" onclick="addSymptom()">+</button>
+                </div> 
+            </div>
+            <div class="symptom-input padding-top">
+                <label for="systolicPressure">Systolic Pressure:</label>
+                <input type="number" name="systolicPressure" class="margin-bottom" placeholder="Skip if N/A">
+            </div>
+            <div class="symptom-input padding-top">
+                <label for="diastolicPressure">Diastolic Pressure:</label>
+                <input type="number" name="diastolicPressure" class="margin-bottom" placeholder="Skip if N/A">
+            </div>
+            <div class="symptom-input padding-top">
+                <label for="bloodSodium">Blood Sodium:</label>
+                <input type="number" name="bloodSodium" class="margin-bottom" placeholder="Skip if N/A">
+            </div>
+            <div class="symptom-input padding-top">
+                <label for="bloodPotassium">Blood Potassium:</label>
+                <input type="number" name="bloodPotassium" class="margin-bottom" placeholder="Skip if N/A">
+            </div>
+            <div class="symptom-input padding-top">
+                <label for="bloodUrea">Blood Urea:</label>
+                <input type="number" name="bloodUrea" class="margin-bottom" placeholder="Skip if N/A">
+            </div>
+       
+            <button type="button" onclick="submitSymptoms()">Submit</button>
+            <div id="result-container"></div>
+
+        </form>
     </div>
 
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

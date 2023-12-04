@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Result</title>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <div id='result-container' class="result-container">
+            <!-- Separate div for the chart --><!-- Add these inside your result-container div -->
+<img id="image1" src="cancer.jpeg" alt="Description of image 1" style="display: block;">
+<img id="image2" src="covid.jpeg" alt="Description of image 2" style="display: block;">
+<img id="image3" src="kidney.jpeg" alt="Description of image 2" style="display: block;">
+<img id="image4" src="cardio.jpeg" alt="Description of image 2" style="display: block;">
+
+<!-- Add more images as needed -->
+
+            <canvas id="barChart" width="400" height="300"></canvas>
+        </div>
+        <button id="returnButton">Return</button>
+    </div>
+
+    <!-- Include your JavaScript files -->
+    <script src="resultHandler.js"></script>
+</body>
+</html>
