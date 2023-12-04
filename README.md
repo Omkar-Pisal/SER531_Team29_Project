@@ -20,3 +20,13 @@ ICU NEED
 INTUBATION NEED
 
 Active smoking includes use of tobacco
+
+
+
+TO RUN THE CODE
+
+clone the project
+switch to final branch using git checkout final
+run python3 script - script.py 
+it will install node dependencies 
+and also execute index.html file from the client directory
