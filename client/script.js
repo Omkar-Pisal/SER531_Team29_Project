@@ -56,7 +56,6 @@ function submitSymptoms() {
         alert('Please enter a valid age between 1 and 110.');
         return;
     }
-    alert(typeof(ageForCalculation))
     const sexSelect = document.querySelector('.sex');
     const sex = sexSelect ? sexSelect.value : null;
 
